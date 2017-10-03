@@ -18,3 +18,5 @@ How to run this application :
 1. Run the three instances of hello-service @ three different ports- 8181,8282,8383 
 2. Run the ribbon-client and hit the url - http://localhost:8080/v1/hi
 3. Observer the logs for 3 instances of hello-service
+
+![alt text](https://github.com/vivekthite/getting-started/blob/master/spring-cloud-netflix-ribbon/load-balancer-demo-arch.png)
