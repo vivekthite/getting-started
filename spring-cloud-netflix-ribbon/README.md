@@ -8,6 +8,8 @@ e.g. ServerListRefreshInterval: 15000
 
 Ribbon provides different strategies to choose one instance among multiple instances and forward the client request to the chosen instance.
 
+![alt text](https://github.com/vivekthite/getting-started/blob/master/spring-cloud-netflix-ribbon/load-balancer.png)
+
 More details of ribbon can be found @ https://github.com/Netflix/ribbon.
 
 ==============================================================================
