@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: load-balancer-client
+    
+    
+hello-service: 
+  eureka: 
+    enabled: false
+  listOfServers: localhost:8181,localhost:8282,localhost:8383    
+  ServerListRefreshInterval: 15000    
