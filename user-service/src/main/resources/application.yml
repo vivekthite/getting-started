@@ -1,0 +1,15 @@
+#server
+server:
+  port: 9093  
+  context-path: /user-service/rest
+  
+#mysql
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.99.100:3306/USER_SERVICE
+    username: user
+    password: user123
+    
+#hibernate
+  jpa:
+    generate-ddl: true
