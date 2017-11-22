@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  context-path: /auth
+  
+security:
+  basic:
+    enabled: false
+    
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/USER_SERVICE
+    username: user
+    password: user123
+    dbcp2:
+      validation-query: SELECT 1
+      test-while-idle: true
+  jpa:
+    hibernate:
+      ddl-auto: create
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    show-sql: true        
+      
