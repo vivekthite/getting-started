@@ -1,0 +1,18 @@
+server:
+  port: 8081
+  context-path: /ui
+  session:
+    cookie:
+      name: UISESSION
+      
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      client-id: ClientId
+      client-secret: secret
+      access-token-uri: http://localhost:8080/auth/oauth/token
+      user-authorization-uri: http://localhost:8080/auth/oauth/authorize
+    resource:
+      user-info-uri: http://localhost:8080/auth/v1/hello          
