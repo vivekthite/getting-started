@@ -1,0 +1,27 @@
+================================
+keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore keystore.p12 -validity 3650 -keypass changeit -storepass changeit
+
+keytool -list -v -storetype pkcs12 -keystore keystore.p12
+
+keytool -list -rfc -storetype pkcs12 -keystore keystore.p12
+==========================================
+
+
+======================
+Use an existing SSL certificate :
+
+If you have already got an SSL certificate, you can import it into a keystore and use it to enable HTTPS in a Spring Boot application.
+
+Using the following command, you’ll create a new keystore containing your certificate.
+
+keytool -import -alias tomcat -file myCertificate.crt -keystore keystore.p12 -storepass password
+
+=====================
+
+=================
+
+If you have already created a JKS keystore and you want to migrate to PKCS12, keytool has a convenient command for that:
+
+keytool -importkeystore -srckeystore keystore.jks -destkeystore
+
+==================
