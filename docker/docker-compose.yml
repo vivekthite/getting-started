@@ -1,0 +1,30 @@
+version: "2.0"
+services:
+
+## MongoDB
+  mongo:
+    image: mongo:latest
+    ports: 
+      - 27017:27017
+
+## rabbitmq      
+  rabbit:
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment: 
+      RABBITMQ_DEFAULT_USER: rabbit
+      RABBITMQ_DEFAULT_PASS: rabbit 
+
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: USER_SERVICE
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user123
+    ports:
+      - 3306:3306
+      
