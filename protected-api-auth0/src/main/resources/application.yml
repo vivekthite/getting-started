@@ -1,0 +1,65 @@
+#server configuration
+server:
+  port: 8443  
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keystore.p12
+    key-password: changeit
+    key-store-password: changeit
+    key-alias: tomcat
+  
+security:
+  require-ssl: true
+  
+
+#rezoomex configuration
+rezoomex :
+  http-port: 8080
+
+    
+
+#auth0 configuration
+auth0: 
+  issuer: https://rezoomex-dev2018.auth0.com/
+  audience: https://gateway.rezoomex-dev.com/
+  signup-url: ${auth0.issuer}dbconnections/signup
+  grant-type: http://auth0.com/oauth/grant-type/password-realm
+  token-url: ${auth0.issuer}oauth/token
+  db-connection: 
+    candidate: rezoomex-candidate-db
+    admin: rezoomex-admin-db 
+    superadmin: rezoomex-superadmin-db       
+  client-id: bNE9WOfk1J7PnFteGnZbi0Po1RZk0SDT
+  client-secret: H5_P-7R5zelZYdvJ2tj1GvdpFY7qyLwJYPL1NTaKDH9W1dGb8wThvVTALT0YhrBS
+  
+  #superadmin scope
+  superadmin-scope: 
+    #admins
+    crud-admin: crud:admins
+    
+  #admin scope
+  admin-scope:
+    #candidates 
+    crud-candidate: crud:candidates
+    #questions
+    crud-question: crud:questions
+    
+  #candiadte scope
+  candidate-scope: 
+    #read random questions
+    read-random-question: read:random-questions        
+       
+  custom-claim-key: 
+    email: https://custom.claims/email
+    org: https://custom.claims/org
+    tech: https://custom.claims/tech
+    role: https://custom.claims/role   
+    
+    
+  
+#logging configuration
+logging:
+  level:
+    com:
+      rezoomex: DEBUG
+       

@@ -1,0 +1,36 @@
+#server configuration
+server:
+  port: 8443  
+  ssl:
+    key-store-type: PKCS12
+    key-store: classpath:keystore.p12
+    key-password: changeit
+    key-store-password: changeit
+    key-alias: tomcat
+  
+security:
+  require-ssl: true
+  
+
+#rezoomex configuration
+rezoomex :
+  http-port: 8080
+
+    
+
+#auth0 configuration
+auth0: 
+  issuer:  https://rezoomex.auth0.com/
+  signup.url: ${auth0.issuer}dbconnections/signup
+  candidate: 
+    connection: candidates   
+    audience: https://read.questions.rezoomex.com/     
+    clientid: GlzINZpd9XsrGTqR6WDAciq5pHYNTIcc
+    
+  
+#logging configuration
+logging:
+  level:
+    com:
+      rezoomex: DEBUG
+       
